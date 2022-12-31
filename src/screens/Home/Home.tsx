@@ -81,11 +81,11 @@ export default function Home() {
         <View style={styles.content}>
           <View style={styles.info}>
             <TaskInfo title="Create" color="blue">
-              {[].length}
+              {tasks.length}
             </TaskInfo>
 
             <TaskInfo title="Done" color="purple">
-              {[].length}
+              {tasks.filter((task) => !!task.done).length}
             </TaskInfo>
           </View>
 
