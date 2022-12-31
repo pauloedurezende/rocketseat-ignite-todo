@@ -35,6 +35,13 @@ export const styles = StyleSheet.create({
     marginVertical: 12,
     flex: 1,
   },
+  titleChecked: {
+    color: '#808080',
+    fontSize: 14,
+    marginVertical: 12,
+    flex: 1,
+    textDecorationLine: 'line-through',
+  },
   active: {
     backgroundColor: '#333',
   },
