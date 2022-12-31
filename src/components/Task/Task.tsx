@@ -35,7 +35,9 @@ export default function Task({
           }[`${done}`]
         }
       </TouchableOpacity>
-      <Text style={styles.title}>{children}</Text>
+      <Text style={[done ? styles.titleChecked : styles.title]}>
+        {children}
+      </Text>
       <TouchableOpacity
         style={[
           styles.rightButton,
