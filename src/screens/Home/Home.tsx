@@ -90,6 +90,7 @@ export default function Home() {
           </View>
 
           <FlatList
+            style={styles.list}
             data={tasks}
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
