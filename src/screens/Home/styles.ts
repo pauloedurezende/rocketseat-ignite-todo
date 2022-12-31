@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
@@ -46,5 +46,8 @@ export const styles = StyleSheet.create({
     paddingBottom: 20,
     borderBottomColor: '#333',
     borderBottomWidth: 1,
+  },
+  list: {
+    height: Dimensions.get('window').height - 295,
   },
 });
