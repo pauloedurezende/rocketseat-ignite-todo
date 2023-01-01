@@ -5,6 +5,7 @@ import {
   TextInput,
   TouchableOpacity,
   FlatList,
+  Alert,
 } from 'react-native';
 import { nanoid } from 'nanoid';
 
@@ -40,6 +41,20 @@ export default function Home() {
         return task;
       });
     });
+  }
+
+  function handleTaskRemove(id: TaskItem['id']) {
+    return Alert.alert('Remove', 'Are you sure you want to remove this task?', [
+      {
+        text: 'Yes',
+        onPress: () =>
+          setTasks((prevState) => prevState.filter((task) => task.id !== id)),
+      },
+      {
+        text: 'No',
+        style: 'cancel',
+      },
+    ]);
   }
 
   return (
@@ -83,6 +98,7 @@ export default function Home() {
                 key={item.id}
                 done={item.done}
                 onToggleDonePress={() => handleToggleTaskDone(item.id)}
+                onRemovePress={() => handleTaskRemove(item.id)}
               >
                 {item.title}
               </Task>
