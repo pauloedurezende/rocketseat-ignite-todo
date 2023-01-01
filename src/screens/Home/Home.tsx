@@ -1,8 +1,14 @@
-import { View, Image, TextInput, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  FlatList,
+} from 'react-native';
 
 import { styles } from './styles';
 
-import { TaskInfo } from '../../components';
+import { EmptyState, TaskInfo } from '../../components';
 
 import logo from '../../../assets/logo.png';
 import plus from '../../../assets/plus.png';
@@ -37,6 +43,13 @@ export default function Home() {
               {[].length}
             </TaskInfo>
           </View>
+
+          <FlatList
+            data={[]}
+            showsVerticalScrollIndicator={false}
+            renderItem={() => null}
+            ListEmptyComponent={() => <EmptyState />}
+          />
         </View>
       </View>
     </View>
