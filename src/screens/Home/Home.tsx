@@ -30,6 +30,18 @@ export default function Home() {
     setInput('');
   }
 
+  function handleToggleTaskDone(id: TaskItem['id']) {
+    setTasks((prevState) => {
+      return prevState.map((task) => {
+        if (task.id === id) {
+          return { ...task, done: !task.done };
+        }
+
+        return task;
+      });
+    });
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -67,7 +79,11 @@ export default function Home() {
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
             renderItem={({ item }) => (
-              <Task key={item.id} done={item.done}>
+              <Task
+                key={item.id}
+                done={item.done}
+                onToggleDonePress={() => handleToggleTaskDone(item.id)}
+              >
                 {item.title}
               </Task>
             )}

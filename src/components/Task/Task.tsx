@@ -13,14 +13,15 @@ import { ButtonState } from '../../@types';
 type Props = {
   children: string;
   done: boolean;
+  onToggleDonePress: () => void;
 };
 
-export default function Task({ children, done }: Props) {
+export default function Task({ children, done, onToggleDonePress }: Props) {
   const [currentTrashIcon, setCurrentTrashIcon] = useState(ButtonState.Normal);
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.leftButton}>
+      <TouchableOpacity style={styles.leftButton} onPress={onToggleDonePress}>
         {
           {
             true: <Image source={checked} />,
