@@ -2,6 +2,8 @@ import { View, Image, TextInput, TouchableOpacity } from 'react-native';
 
 import { styles } from './styles';
 
+import { TaskInfo } from '../../components';
+
 import logo from '../../../assets/logo.png';
 import plus from '../../../assets/plus.png';
 
@@ -23,6 +25,18 @@ export default function Home() {
           <TouchableOpacity style={styles.button}>
             <Image source={plus} />
           </TouchableOpacity>
+        </View>
+
+        <View style={styles.content}>
+          <View style={styles.info}>
+            <TaskInfo title="Create" color="blue">
+              {[].length}
+            </TaskInfo>
+
+            <TaskInfo title="Done" color="purple">
+              {[].length}
+            </TaskInfo>
+          </View>
         </View>
       </View>
     </View>
