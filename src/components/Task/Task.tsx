@@ -14,9 +14,15 @@ type Props = {
   children: string;
   done: boolean;
   onToggleDonePress: () => void;
+  onRemovePress: () => void;
 };
 
-export default function Task({ children, done, onToggleDonePress }: Props) {
+export default function Task({
+  children,
+  done,
+  onToggleDonePress,
+  onRemovePress,
+}: Props) {
   const [currentTrashIcon, setCurrentTrashIcon] = useState(ButtonState.Normal);
 
   return (
@@ -35,6 +41,7 @@ export default function Task({ children, done, onToggleDonePress }: Props) {
           styles.rightButton,
           currentTrashIcon === ButtonState.Active && styles.active,
         ]}
+        onPress={onRemovePress}
         onPressIn={() => setCurrentTrashIcon(ButtonState.Active)}
         onPressOut={() => setCurrentTrashIcon(ButtonState.Normal)}
       >
