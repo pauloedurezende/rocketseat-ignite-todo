@@ -39,4 +39,12 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  content: {},
+  info: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingBottom: 20,
+    borderBottomColor: '#333',
+    borderBottomWidth: 1,
+  },
 });
