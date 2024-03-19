@@ -10,7 +10,9 @@ export default function EmptyState() {
       <Image source={clipboard} />
 
       <View style={styles.row}>
-        <Text style={styles.title}>You don't have tasks registered yet</Text>
+        <Text style={styles.title}>
+          You don&apos;t have tasks registered yet
+        </Text>
         <Text style={styles.subtitle}>
           Create tasks and organize your to-do items
         </Text>
